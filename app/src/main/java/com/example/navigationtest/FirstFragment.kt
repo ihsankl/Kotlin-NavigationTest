@@ -5,15 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.Navigation
-import com.example.navigationtest.databinding.FragmentFirstBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
-private var _binding: FragmentFirstBinding? = null
-private val binding get() = _binding!!
 
 /**
  * A simple [Fragment] subclass.
@@ -37,15 +33,8 @@ class FirstFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentFirstBinding.inflate(inflater, container, false)
-        val view = binding.root
-        _binding!!.tv1.setOnClickListener{
-//            KIRIM ARG KE FRAGMENT KE 2
-            val action = FirstFragmentDirections.toSecondFrags(22)
-//            PINDAH KE FRAGMENT 2
-            Navigation.findNavController(view).navigate(action)
-        }
-        return view
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_first, container, false)
     }
 
     companion object {
