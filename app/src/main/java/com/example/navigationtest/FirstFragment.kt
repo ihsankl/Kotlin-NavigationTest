@@ -40,7 +40,9 @@ class FirstFragment : Fragment() {
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
         val view = binding.root
         _binding!!.tv1.setOnClickListener{
+//            KIRIM ARG KE FRAGMENT KE 2
             val action = FirstFragmentDirections.toSecondFrags(22)
+//            PINDAH KE FRAGMENT 2
             Navigation.findNavController(view).navigate(action)
         }
         return view
