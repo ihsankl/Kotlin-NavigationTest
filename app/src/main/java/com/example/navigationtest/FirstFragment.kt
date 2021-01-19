@@ -39,7 +39,10 @@ class FirstFragment : Fragment() {
     ): View? {
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
         val view = binding.root
-        _binding!!.tv1.setOnClickListener{Navigation.findNavController(view).navigate(R.id.toSecondFrags)}
+        _binding!!.tv1.setOnClickListener{
+            val action = FirstFragmentDirections.toSecondFrags(22)
+            Navigation.findNavController(view).navigate(action)
+        }
         return view
     }
 

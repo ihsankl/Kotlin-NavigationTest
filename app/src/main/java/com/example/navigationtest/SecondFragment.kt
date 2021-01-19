@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.navArgs
 import com.example.navigationtest.databinding.FragmentFirstBinding
 import com.example.navigationtest.databinding.FragmentSecondBinding
 
@@ -26,6 +27,7 @@ class SecondFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    val args: SecondFragmentArgs by navArgs()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +44,8 @@ class SecondFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentSecondBinding.inflate(inflater, container, false)
         val view = binding.root
+        val myNumber = args.number
+        _binding!!.tv2.text = myNumber.toString()
         _binding!!.tv2.setOnClickListener{ Navigation.findNavController(view).navigate(R.id.toFirstFrags)}
         return view
     }
