@@ -1,31 +1,28 @@
-package com.example.navigationtest
+package com.example.navigationtest.onBoarding.screens
 
 import android.os.Bundle
-import android.os.Handler
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
+import com.example.navigationtest.R
 
 
 /**
  * A simple [Fragment] subclass.
- * Use the [SplashFragment.newInstance] factory method to
+ * Use the [FirstSScreen.newInstance] factory method to
  * create an instance of this fragment.
  */
-class SplashFragment : Fragment() {
+class FirstSScreen : Fragment() {
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        Handler().postDelayed({
-            findNavController().navigate(R.id.action_splashFragment_to_viewPagerFragment)
-        }, 3000)
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_splash, container, false)
-
+        val view = inflater.inflate(R.layout.fragment_first_s_screen, container, false)
+        
         return view
     }
 

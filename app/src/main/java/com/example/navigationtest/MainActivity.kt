@@ -8,6 +8,9 @@ import android.os.Bundle
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        supportActionBar?.hide()
+        actionBar?.hide()
     }
 
  }
